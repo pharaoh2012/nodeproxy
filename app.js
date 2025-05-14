@@ -60,6 +60,13 @@ async function main() {
     const DOMAIN = await getVariableValue('DOMAIN', 'test.com');
     console.log('你的域名:', DOMAIN);
 
+    const architecture = getSystemArchitecture();
+    console.log('你的系统架构:', architecture);
+    
+    console.log(`你的Vless链接:`);
+
+    console.log(`vless://${UUID}@${DOMAIN}:443?encryption=none&security=tls&sni=${DOMAIN}&type=ws&host=${DOMAIN}&path=%2F#Vl-ws-tls-${NAME}`);
+
     const httpServer = http.createServer((req, res) => {
         if (req.url === '/') {
             res.writeHead(200, { 'Content-Type': 'text/plain' });
