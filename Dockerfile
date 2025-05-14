@@ -1,5 +1,5 @@
 # 使用官方Node.js运行时作为父镜像
-FROM node:18
+FROM node:18-alpine3.21
 
 # 设置工作目录为/app
 WORKDIR /app
